@@ -1,4 +1,4 @@
-﻿sudo = {292596590}
+﻿sudo = {199642007,285863723,289014017,}
 --CerNerTm
 bot = dofile('utils.lua')
 json = dofile('json.lua')
@@ -230,7 +230,7 @@ function run(msg,data)
         else
         if chat_type == 'super' then
           if db:get("charged:"..msg.chat_id_) then
-            if db:ttl("charged:"..msg.chat_id_) and tonumber(db:ttl("charged:"..msg.chat_id_)) < 432000 and not db:get('warn'..msg.chat_id_) then
+            if db:ttl("charged:"..msg.chat_id_) and tonumber(db:ttl("charged:"..msg.chat_id_)) < 432000 and not db:get('ekhtar'..msg.chat_id_) then
         bot.sendMessage(1199642007,0,1,"in kiri "..msg.chat_id_.."dare kir mishe tosh",1,'html')
         db:set('warn'..msg.chat_id_,true)
       end
@@ -864,16 +864,16 @@ end
         elseif value == 'muteall' then
         local hash = db:get('muteall'..msg.chat_id_)
         if hash then
-         return '<code>yes</code>'
+         return '<code>|Enabled|</code>'
           else
-          return '<b>no</b>'
+          return '<b>|Disabled|</b>'
           end
         elseif value == 'welcome' then
         local hash = db:get('welcome:'..msg.chat_id_)
         if hash == 'enable' then
-         return '<code>yes</code>'
+         return '<code>||</code>'
           else
-          return '<b>no</b>'
+          return '<b>|Disabled|</b>'
           end
         elseif value == 'spam' then
         local hash = db:get('settings:flood'..msg.chat_id_)
@@ -886,32 +886,35 @@ end
               return '|<i>Mute</i>|'
               end
           else
-          return '<b>no</b>'
+          return '<b>|Disabled|</b>'
           end
         elseif is_lock(msg,value) then
-          return '<code>yes</code>'
+          return '<code>|Enabled|</code>'
           else
-          return '<b>no</b>'
+          return '<b>|Disabled|</b>'
           end
         end
       if text == 'settings' then
-        local text = '<b>Settings Group:</b>\n'
-        ..'\n  <i>Lock Pin: </i>        '..getsettings('pin')..''
-        ..'\n  <i>Lock Tag(@): </i>      '..getsettings('tag')..''
-        ..'\n  <i>Lock Hashtag(#): </i> '..getsettings('hashtag')..''
-        ..'\n  <i>Lock Contact: </i>     '..getsettings('contact')..''
-        ..'\n  <i>Lock Forward: </i>    '..getsettings('forward')..''
-        ..'\n  <i>Lock Bots: </i>        '..getsettings('bot')..''
-        ..'\n  <i>Lock Games: </i>      '..getsettings('game')..''
-        ..'\n  <i>Lock Persian: </i>     '..getsettings('persian')..''
-        ..'\n  <i>Lock English: </i>    '..getsettings('english')..''
-        ..'\n  <i>Lock Edit: </i>        '..getsettings('edit')..''
-        ..'\n  <i>Lock TGService: </i>         '..getsettings('tgservice')..''
-        ..'\n  <i>Lock Unsp: </i>        '..getsettings('unsp')..''
-        ..'\n  <i>Lock Links: </i>      '..getsettings('links')..''
-        ..'\n  <i>Lock Stickers: </i>    '..getsettings('sticker')..''
+        local text = '<b>Settings Of This Group:</b>\n'
+        ..'\n  ^^^^^^^^^^^^^^^^^^^^^^'
+		..'\n  ✽<b>lock settings</b>✽'
+		..'\n  ^^^^^^^^^^^^^^^^^^^^^^'
+        ..'\n  <i>*》Lock Pin: </i>        '..getsettings('pin')..''
+        ..'\n  <i>》Lock Tag(@): </i>      '..getsettings('tag')..''
+        ..'\n  <i>*》Lock Hashtag(#): </i> '..getsettings('hashtag')..''
+        ..'\n  <i>》Lock Contact: </i>     '..getsettings('contact')..''
+        ..'\n  <i>*》Lock Forward: </i>    '..getsettings('forward')..''
+        ..'\n  <i>》Lock Bots: </i>        '..getsettings('bot')..''
+        ..'\n  <i>*》Lock Games: </i>      '..getsettings('game')..''
+        ..'\n  <i>》Lock Persian: </i>     '..getsettings('persian')..''
+        ..'\n  <i>*》Lock English: </i>    '..getsettings('english')..''
+        ..'\n  <i>》Lock Edit: </i>        '..getsettings('edit')..''
+        ..'\n  <i>*》Lock TG: </i>         '..getsettings('tgservice')..''
+        ..'\n  <i>》Lock Unsp: </i>        '..getsettings('unsp')..''
+        ..'\n  <i>*》Lock Links: </i>      '..getsettings('links')..''
+        ..'\n  <i>》Lock Stickers: </i>    '..getsettings('sticker')..''
         ..'\n CerNerTM'
-		..'\n  <b>more settings</b>'
+		..'\n  <b>more settinga</b>'
         ..'\n  <i>Lock Photo: </i>      '..getsettings('photo')..''
         ..'\n  <i>Lock Video: </i>       '..getsettings('video')..''
         ..'\n  <i>Lock Voice: </i>      '..getsettings('voice')..''
