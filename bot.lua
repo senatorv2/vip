@@ -232,7 +232,7 @@ function run(msg,data)
           if db:get("charged:"..msg.chat_id_) then
             if db:ttl("charged:"..msg.chat_id_) and tonumber(db:ttl("charged:"..msg.chat_id_)) < 432000 and not db:get('ekhtar'..msg.chat_id_) then
         bot.sendMessage(1199642007,0,1,"in kiri "..msg.chat_id_.."dare kir mishe tosh",1,'html')
-        db:set('warn'..msg.chat_id_,true)
+        db:set('akhtar'..msg.chat_id_,true)
       end
         elseif not db:get("charged:"..msg.chat_id_) then
         bot.sendMessage(msg.chat_id_,0,1," یا میای پول میدی به من @XzAmirXz یا لفت ",1,'html')
