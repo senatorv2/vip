@@ -1,4 +1,4 @@
-﻿sudo = {199642007,285863723,289014017,}
+﻿sudo = {170146015,204507468,196568905,}
 --CerNerTm
 bot = dofile('utils.lua')
 json = dofile('json.lua')
@@ -231,12 +231,12 @@ function run(msg,data)
         if chat_type == 'super' then
           if db:get("charged:"..msg.chat_id_) then
             if db:ttl("charged:"..msg.chat_id_) and tonumber(db:ttl("charged:"..msg.chat_id_)) < 432000 and not db:get('ekhtar'..msg.chat_id_) then
-        bot.sendMessage(1199642007,0,1,"in kiri "..msg.chat_id_.."dare kir mishe tosh",1,'html')
+        bot.sendMessage(170146015,0,1,"in kiri "..msg.chat_id_.."dare kir mishe tosh",1,'html')
         db:set('ekhtar'..msg.chat_id_,true)
       end
         elseif not db:get("charged:"..msg.chat_id_) then
-        bot.sendMessage(msg.chat_id_,0,1," یا میای پول میدی به من @XzAmirXz یا لفت ",1,'html')
-        bot.sendMessage(1199642007,0,1,"شارژ تموم شد؛/ "..msg.chat_id_,1,'html')
+        bot.sendMessage(msg.chat_id_,0,1," یا میای پول میدی به من @Lv_t_m یا لفت ",1,'html')
+        bot.sendMessage(170146015,0,1,"شارژ تموم شد؛/ "..msg.chat_id_,1,'html')
         bot.changeChatMemberStatus(msg.chat_id_, bot_id, "Left")
         end
         end       
@@ -308,7 +308,7 @@ end
     end
 if text and text:match('^leave(-021)(%d+)$') then
        bot.sendMessage(msg.chat_id_,msg.id_,1,'ربات با موفقیت از گروه '..text:match('leave(.*)')..' خارج شد.',1,'html')
-       bot.sendMessage(text:match('leave(.*)'),0,1,"اعتبار گروه تمام شده است برای تمدید به @XzAmirXz مراجعه کنید",1,'html')
+       bot.sendMessage(text:match('leave(.*)'),0,1,"اعتبار گروه تمام شده است برای تمدید به @Lv_t_m مراجعه کنید",1,'html')
      bot.changeChatMemberStatus(text:match('leave(.*)'), bot_id, "Left")
   end
   if text and text:match('^plan1(-021)(%d+)$') then
@@ -361,7 +361,7 @@ __
   if text and text == 'نرخ' or text == 'nerkh' or text == 'مبلغ' then
     local text = [[<code> نرخ فروش ربات  :</code>
 
- <i>- 1 ماهه > 5000 تومان</i>
+ <i>- 1 ماهه > 5000 تومان</i>\n<i>- 2 ماهه > 8000 تومان</i>\n<i>- 3 ماهه > 10000 تومان</i>\n<i>سه ماهه +یک ماه :4> 18000 تومان</i>\n<i>سه ماهه +یک ماه :4> 23000 تومان</i>\n<i>سه ماهه +یک ماه :4> 30000 تومان</i>
  ]]
         bot.sendMessage(msg.chat_id_, msg.id_, 1, text,1, 'html')
     end
