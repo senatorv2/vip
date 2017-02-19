@@ -1,2 +1,0 @@
-# newTg
-CerNer
