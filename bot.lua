@@ -2291,7 +2291,7 @@ local user_msgs = database:get('user:msgs'..msg.chat_id_..':'..msg.sender_user_i
 		  .."🚏🚏🚏🚏🚏🚏🚏\n"
 	          .."💈_bot name_ =>senator`\n"
 	          .."💈_bot_ => v5\n"
-	          .."💈_Channel_ => @senator_tea\n"
+	          .."💈_Channel_ => \n"
          send(msg.chat_id_, msg.id_, 1, TXT, 1, 'md')
     end
 	-----------------------------------------------------------------------------------------------
